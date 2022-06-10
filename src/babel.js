@@ -27,6 +27,11 @@ exports.shouldCompile = function(sourceCode) {
   return PREFIXES.some(function(prefix) {
     return start.indexOf(prefix) === 0;
   });
+  exports.shouldCompile = function(sourceCode) {
+  const start = sourceCode.substr(0, PREFIX_LENGTH);
+  return PREFIXES.some(function(prefix) {
+    return start.indexOf(prefix) === 0;
+  });
 };
 
 exports.getCachePath = function(sourceCode) {
